@@ -9,132 +9,133 @@ This paper introduces an implementation of the secure communication protocol for
 ## Objectives
 
 1. Introduce TSS Technology and Applications
-   - Introduce glossary terms.
-   - Provide an overview of the TSS technology, its main concepts, and applications.
-   - Present real-world examples of TSS usage.
-   - Explain the importance of TSS in public key cryptography and multi-party computation.
+    - Introduce glossary terms.
+    - Provide an overview of the TSS technology, its main concepts, and applications.
+    - Present real-world examples of TSS usage.
+    - Explain the importance of TSS in public key cryptography and multi-party computation.
 
 2. Address Limitations of Existing Solutions
-   - Indicate drawbacks of the THORChain TSS implementation.
-   - List alternatives that different projects use.
-   - Compare existing TSS cryptography libraries in Golang.
+    - Indicate drawbacks of the THORChain TSS implementation.
+    - List alternatives that different projects use.
+    - Compare existing TSS cryptography libraries in Golang.
 
 3. Design and Implement a Secure Transport Layer for TSS in Golang
-   - Develop a communication protocol specifically tailored for TSS operations: key generation, key signing.
-   - Select the most suitable TSS cryptography library.
-   
+    - Develop a communication protocol specifically tailored for TSS operations: key generation, key signing.
+    - Select the most suitable TSS cryptography library.
+
 4. Benchmark and Compare Implementations
-   - Conduct performance evaluations comparing with the existing THORChain solution.
-   - Analyze time and memory utilization for key generation and key signing depending on the different number of parties.
+    - Conduct performance evaluations comparing with the existing THORChain solution.
+    - Analyze time and memory utilization for key generation and key signing depending on the different number of parties.
 
 5. Enhance Security and Reliability
-   - Employ techniques from Binance Guide[8] to ensure secure communication.
-   - (???) Ensure the transport layer is resilient against common network attacks and failures.
-   
+    - Employ techniques from Binance Guide[8] to ensure secure communication.
+    - (???) Ensure the transport layer is resilient against common network attacks and failures.
+
 6. Contribute to the Community
-   - Release the implementation as an open-source project.
-   - Provide comprehensive documentation and examples.
-   - (???) Try to make the library compatible with the existing projects.
-   - (???) Create a demo application that uses the library.
+    - Release the implementation as an open-source project.
+    - Provide comprehensive documentation and examples.
+    - (???) Try to make the library compatible with the existing projects.
+    - (???) Create a demo application that uses the library.
 
 7. Introduce Further Improvements
-   - Everything marked with (???) in the previous objectives.
+    - Everything marked with (???) in the previous objectives.
 
 ## Execution Plan
 
 ### Initial Research and Planning (Weeks 1-2, November)
+
 1. Literature Review:
-   - Study foundational papers and resources on TSS, multi-party computation, and related cryptographic concepts.
-   - Compile a glossary of key terms to be used throughout the thesis.
-   - Prepare and analyze a list of references.
+    - Study foundational papers and resources on TSS, multi-party computation, and related cryptographic concepts.
+    - Compile a glossary of key terms to be used throughout the thesis.
+    - Prepare and analyze a list of references.
 2. Documentation Drafting:
-   - Write the introductory sections, covering:
-     - Overview of TSS technology and its importance in public key cryptography.
-     - Real-world applications and examples of TSS usage.
-     - Explanation of how TSS enhances security in distributed systems.
+    - Write the introductory sections, covering:
+        - Overview of TSS technology and its importance in public key cryptography.
+        - Real-world applications and examples of TSS usage.
+        - Explanation of how TSS enhances security in distributed systems.
 
 ### Analysis of Existing Solutions (Weeks 3-4, December)
 
 1. Examine THORChain TSS Implementation:
-   - Review the codebase and documentation (or lack thereof).
-   - Identify specific issues related to maintenance, outdated dependencies, and security concerns.
+    - Review the codebase and documentation (or lack thereof).
+    - Identify specific issues related to maintenance, outdated dependencies, and security concerns.
 2. Research Alternatives:
-   - Investigate other projects (e.g., Sygma, Threshold Network) and their approaches to TSS.
-   - Compile a list of existing TSS cryptography libraries in Golang.
+    - Investigate other projects (e.g., Sygma, Threshold Network) and their approaches to TSS.
+    - Compile a list of existing TSS cryptography libraries in Golang.
 3. Comparative Analysis:
-   - Evaluate the features, pros, and cons of each library.
-   - Prepare a comparison chart or table for clarity.
+    - Evaluate the features, pros, and cons of each library.
+    - Prepare a comparison chart or table for clarity.
 
 ### Design of the Secure Transport Layer (Weeks 5-6, December)
 
 1. Select TSS Cryptography Library:
-   - Choose the most suitable existing TSS library (e.g., Binance's go-tss) to build upon.
+    - Choose the most suitable existing TSS library (e.g., Binance's go-tss) to build upon.
 2. Protocol Design:
-   - Define the requirements for the communication protocol specific to TSS operations like key generation and key signing.
-   - Design message formats, communication sequences, and error-handling mechanisms.
-   - Incorporate security measures based on best practices and Binance Guide[8].
+    - Define the requirements for the communication protocol specific to TSS operations like key generation and key signing.
+    - Design message formats, communication sequences, and error-handling mechanisms.
+    - Incorporate security measures based on best practices and Binance Guide[8].
 3. Architectural Planning:
-   - Outline the architecture of the transport layer, ensuring scalability (it may have multiple parties).
-   - Plan how the transport layer will interface with the chosen TSS cryptography library.
+    - Outline the architecture of the transport layer, ensuring scalability (it may have multiple parties).
+    - Plan how the transport layer will interface with the chosen TSS cryptography library.
 
 ### Implementation of the Transport Layer (Weeks 7-10, January)
 
 1. Coding:
-   - Implement the designed communication protocol.
-   - Ensure secure communication channels, possibly using TLS or other encryption methods.
-   - Develop modules for key generation and key signing processes.
-   - Create APIs (HTTP or gRPC server and simple CLI) to allow users run the environment manually.
+    - Implement the designed communication protocol.
+    - Ensure secure communication channels, possibly using TLS or other encryption methods.
+    - Develop modules for key generation and key signing processes.
+    - Create APIs (HTTP or gRPC server and simple CLI) to allow users run the environment manually.
 2. Testing:
-   - Write unit tests for individual components.
+    - Write unit tests for individual components.
 
 ### Testing and Validation (Weeks 11-12, February)
 
 1. Security Enhancements:
-   - Apply techniques from the Binance Guide [8] to strengthen security.
+    - Apply techniques from the Binance Guide [8] to strengthen security.
 2. Resilience Measures (Optional):
-   - (If time permits) Ensure the transport layer can handle network attacks and failures gracefully.
-   - Implement retry mechanisms and fault tolerance features.
+    - (If time permits) Ensure the transport layer can handle network attacks and failures gracefully.
+    - Implement retry mechanisms and fault tolerance features.
 3. Validation:
-   - Perform integration tests to ensure the library works with multiple nodes.
+    - Perform integration tests to ensure the library works with multiple nodes.
 
 ### Benchmarking and Comparison (Weeks 13-14, February)
 
 1. Set Up Benchmarking Environment:
-   - Prepare testing scenarios with varying numbers of parties.
+    - Prepare testing scenarios with varying numbers of parties.
 2. Performance Evaluation:
-   - Measure time and memory utilization during key generation and key signing.
+    - Measure time and memory utilization during key generation and key signing.
 3. Comparison with THORChain TSS:
-   - (???) Repeat the same tests using the THORChain TSS implementation.
-   - Use THORChain TSS benchmark paper[9] as a reference.
-   - Compare results to evaluate improvements or regressions.
+    - (???) Repeat the same tests using the THORChain TSS implementation.
+    - Use THORChain TSS benchmark paper[9] as a reference.
+    - Compare results to evaluate improvements or regressions.
 4. Data Analysis:
-   - Use statistical tools to interpret the benchmarking results.
-   - Visualize data using graphs and charts for clarity.
+    - Use statistical tools to interpret the benchmarking results.
+    - Visualize data using graphs and charts for clarity.
 
 ### Documentation and Open-Source Release (Weeks 15-16, March)
 
 1. Documentation:
-   - Write comprehensive user guides, including installation instructions and usage examples.
-   - Generate API documentation with comments and annotations in the code.
-   - Include a clear README.md with project overview and contribution guidelines.
+    - Write comprehensive user guides, including installation instructions and usage examples.
+    - Generate API documentation with comments and annotations in the code.
+    - Include a clear README.md with project overview and contribution guidelines.
 2. Open-Source (Optional, if time permits):
-   - Share the project in relevant forums or communities to gather initial feedback.
-   - Adjust the library to be compatible with existing projects.
-   - Develop a simple demo app showcasing the library's capabilities.
+    - Share the project in relevant forums or communities to gather initial feedback.
+    - Adjust the library to be compatible with existing projects.
+    - Develop a simple demo app showcasing the library's capabilities.
 
 ### Thesis Writing and Finalization (Weeks 17-19, April)
 
 1. Compile Thesis Document:
-   - Integrate all written sections into a cohesive thesis.
-   - Ensure that the introduction, methodology, results, and conclusions are well-articulated.
+    - Integrate all written sections into a cohesive thesis.
+    - Ensure that the introduction, methodology, results, and conclusions are well-articulated.
 2. Editing and Proofreading:
-   - Review for grammatical errors and clarity.
-   - Verify that all citations and references are correctly formatted.
+    - Review for grammatical errors and clarity.
+    - Verify that all citations and references are correctly formatted.
 3. Advisor Review:
-   - Make necessary revisions based on comments.
+    - Make necessary revisions based on comments.
 4. Preparation for Defense:
-   - Prepare presentation slides.
-   - Practice the defense speech, anticipate possible questions.
+    - Prepare presentation slides.
+    - Practice the defense speech, anticipate possible questions.
 
 ## References
 
@@ -169,6 +170,7 @@ ChatGPT chat with related info: https://chatgpt.com/share/6735ec7c-d8e8-800a-b9a
 | CHAINBRIDGE MULTI-PARTY SIGNING - RESEARCH                                                  | https://hackmd.io/@timofey/BkG-pTBCK                                                                                                |
 | CHAINBRIDGE p2p communication for TSS systems pre-design research                           | https://github.com/ChainSafe/chainbridge-core/issues/279                                                                            |
 | CHAINBRIDGE TSS for bridging pre-desing research                                            | https://github.com/ChainSafe/chainbridge-core/issues/280                                                                            |
+| Qredo Protocol Yellow Paper                                                                 | https://www.qredo.com/qredo-yellow-paper.pdf                                                                                        |
 
 ### Projects Using THORChain TSS
 
@@ -189,6 +191,7 @@ ChatGPT chat with related info: https://chatgpt.com/share/6735ec7c-d8e8-800a-b9a
 ## Remarks
 
 ### THORChain TSS Problems
+
 - Relying on the old vulnerable dependencies. Moreover, most of these dependencies are not backward-compatible, so updating would require changes in multiple repositories.
 - Relying on the unaudited TSS library with GG20 (Gennaro and Goldfeder CCS 2020)
 - GG20 is unsupported by most of the common libraries (they are usually based on GG18), thus the dependency is unique and irreplaceable
@@ -196,6 +199,7 @@ ChatGPT chat with related info: https://chatgpt.com/share/6735ec7c-d8e8-800a-b9a
 - Still existing problems listed in the 2020 Kudelski Security audit
 
 ### TSS Technology Introduction:
+
 - Main concepts
 - Field of applications
 - Real-world examples
