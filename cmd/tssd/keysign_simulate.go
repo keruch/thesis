@@ -85,6 +85,10 @@ outer:
 				to = partyIDs
 			}
 
+			// log format:
+			// Type: binance.tsslib.ecdsa.keygen.KGRound2Message2, From: {1,P[2]}, To: all
+			fmt.Printf("%s\n", msg.String())
+
 			for _, p := range to {
 				go handlePartyMessage(parties[p.Index], msg, errCh)
 			}
@@ -126,4 +130,10 @@ outer:
 	}
 
 	fmt.Println("Signature is valid")
+
+	fmt.Println("X: ", ks.ECDSAPub.X().String())
+	fmt.Println("Y: ", ks.ECDSAPub.Y().String())
+	fmt.Println("M: ", msg.String())
+	fmt.Println("R: ", r.String())
+	fmt.Println("S: ", s.String())
 }

@@ -73,6 +73,10 @@ outer:
 				to = partyIDs
 			}
 
+			// log format:
+			// Type: binance.tsslib.ecdsa.keygen.KGRound2Message2, From: {1,P[2]}, To: all
+			fmt.Printf("%s\n", msg.String())
+
 			for _, p := range to {
 				go handlePartyMessage(parties[p.Index], msg, errCh)
 			}
@@ -108,10 +112,6 @@ func handlePartyMessage(to tss.Party, msg tss.Message, errCh chan<- *tss.Error) 
 	if to.PartyID() == msg.GetFrom() {
 		return
 	}
-
-	// log format:
-	// Type: binance.tsslib.ecdsa.keygen.KGRound2Message2, From: {1,P[2]}, To: all
-	fmt.Printf("%s\n", msg.String())
 
 	bz, _, err := msg.WireBytes()
 	if err != nil {
