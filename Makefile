@@ -9,12 +9,12 @@ GO_VERSION := $(shell cat go.mod | grep -E 'go [0-9].[0-9]+' | cut -d ' ' -f 2)
 
 #? build: build the observer binary
 build:
-	go build -o $(BUILDDIR)/tssd ./cmd/tssd
+	go build -o $(BUILDDIR)/tssd ./poc/cmd/tssd
 .PHONY: build
 
 #? install: install the observer binary
 install:
-	go install ./cmd/tssd
+	go install ./poc/cmd/tssd
 .PHONY: install
 
 #? test: run tests

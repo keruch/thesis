@@ -272,3 +272,13 @@ Cons:
 
 * Doesn't have transport or leader election
 * HTSS differs from TSS, will need additional time to dig into it
+
+# P2P
+
+Discovering and connecting with other peers is a key challenge in P2P networking. In the past, each P2P application had to develop its own solution for this problem, leading to a lack of reusable, well-documented P2P protocols. IPFS looked to existing research and networking applications for inspiration, but found few code implementations that were usable and adaptable. Many of the existing implementations had poor documentation, restrictive licensing, outdated code, no point of contact, were closed source, deprecated, lacked specifications, had unfriendly APIs, or were tightly coupled with specific use cases and not upgradeable. As a result, developers often had to reinvent the wheel each time they needed P2P protocols, rather than being able to reuse existing solutions.
+
+Security Considerations: https://docs.libp2p.io/concepts/security/security-considerations/
+Secure Channels: https://docs.libp2p.io/concepts/secure-comm/overview/
+Publish/Subscribe: https://docs.libp2p.io/concepts/pubsub/overview/
+P2P launchpad: https://pl-launchpad.io/curriculum/libp2p/objectives/
+NAT traversal
